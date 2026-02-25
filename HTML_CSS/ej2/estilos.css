@@ -1,0 +1,614 @@
+/* Modelo de caja universal */
+* {
+    box-sizing: border-box;
+}
+
+/* Altura completa del documento html */
+html, body {
+    height: 100%;
+}
+
+/*
+Configuración general:
+- Quitamos los márgenes por defecto
+- Elegimos una tipografía base
+- Definimos color de texto y fondo
+*/
+body {
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+    /*
+      - "Roboto": fuente que hemos traído de Google Fonts
+      - system-ui, -apple-system, etc.: fuentes de sistema de respaldo
+      - sans-serif: último recurso genérico
+    */
+
+    color: #333;
+    background: #f0f0f0;
+    display: flex;              /* Contenedor flexible */
+    flex-direction: column;     /* Disposición vertical de los 3 elementos */
+    min-height: 100vh;          /* Altura total del viewport*/
+}
+
+/* Títulos con aire futurista/gamer */
+h1, h2 {
+    font-family: "Orbitron", "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* separa un poco las letras, estilo arcade/futurista */
+}
+
+/* H3 puede ser más discreto pero manteniendo jerarquía */
+h3 {
+    font-family: "Roboto", system-ui, sans-serif;
+    font-weight: 700;
+}
+
+/* Cabecera con FLEX */
+.cabecera {
+    text-align: center;
+    padding: 1rem;          /* 1 rem = 16 px */
+    display: flex;
+    justify-content: space-between;             /* Separa brand y menú */
+    align-items: center;                        /* Centrar verticalmente */
+    background: #2C3E50;
+}
+
+/* Tamaño del logo */
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+/* Menú con FLEX */
+.menu {
+    list-style: none;   /* Eliminamos las viñetas */
+    display: flex;      /* Colocamos en línea los enlaces */
+    gap: 1rem;          /* Separo los enlaces */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo básico de los enlaces del menú */
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Orbitron", "Roboto", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Enlace activo del menú (página actual) */
+.menu a.activo {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 0.2rem;
+}
+
+/* Efecto hover para los enlaces (pseudoclase) */
+.menu a:hover {
+    color: #e74c3c;
+}
+
+/* Título de la cabecera sin márgenes extra y color destacado */
+/* .titulo {
+    margin: 0;
+    color: #2C3E50;
+} */
+
+/* Zona principal (main)
+    padding -> espacio interior o relleno 
+*/
+#contenido-principal {
+    padding: 1rem;
+    flex-grow: 1;       /* Esto empuja el footer hacia abajo */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Clase "tarjeta": usada para agrupar secciones visualmente 
+    - color blanco
+    - border sutil y redondeado en las esquinas
+    - sombra ligera
+    - ancho máximo controlado
+*/
+.tarjeta {
+    background: #fff;
+    border-radius: 12px;
+    width: min(900px, 95%);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Texto secundario */
+.aviso {
+    color: #7F8C8D;
+}
+
+/* Listas en dos columnas flexibles (FLEX) */
+.listas {
+    display: flex;      /* Convierto al elemento como contenedor flexible */
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* Ajustes visuales de las listas */
+.lista {
+    padding-left: 20px;     /* Espacio para las viñetas o número*/
+}
+
+.lista li {
+    margin: 0.5rem 0;       /* Añado espacio vertical entre los elementos de la lista */    
+}
+
+/* Estilamos las tablas */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Border y relleno a las celdas */
+.tabla th, .tabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tabla th {
+    background: #2C3E50;
+    color: #fff;
+    text-align: center;
+}
+
+.tabla td {
+    text-align: left;
+    white-space: nowrap;        /* Evita saltos de línea en celdas */
+}
+
+/* Estilo del pie de página:
+    - color gris suave
+    - tamaño de letra menor
+    - fondo ligeramente gris 
+*/
+
+/* ======= FORMULARIO DE REGISTRO ======= */
+.form-registro{
+    background-color: #fff;
+    border: 4px solid darkgoldenrod;
+    border-radius: 7px;
+    padding: 1rem;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: firebrick;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 0.75rem;
+}
+
+.form-row label {
+    font-weight: bold;
+}
+
+.form-row button {
+    background-color: firebrick;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* .botones input[type="submit"] {
+    background-color: green;
+} */
+
+.form-row button:hover {
+    background-color: darkred;
+}
+
+.pie {
+    text-align: center;
+    padding: 1rem;
+    color: #7F8C8D;
+    background: #38707e;
+    font-size: 14px;
+}
+
+/* ==================
+   SECCION CONTACTO
+   ==================
+*/
+
+.contacto-ubicacion {
+    margin-top: 2rem;
+}
+
+.mapa-contenedor {
+    margin-top: 1rem;
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    max-width: 600px;
+    /* height: 350px; */
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 8px;
+
+    /* Centramos el mapa horizontalmente */
+    display: block;
+    margin: 0 auto;    
+}
+
+
+/* ========================
+   SECCION TIENDA
+   ========================
+*/
+
+.tarjeta.tienda {
+    width: min(1500px, 95%);
+}
+
+/* Contenedor de las cards */
+.lista-cards--flex {
+    display: flex;              /*Activa el modelo Flex */
+    flex-wrap: wrap;            /* Permite que las cards salten de línea si no cabeb */
+    gap: 16px;                  /* Espacio uniforme entre las cards */
+    justify-content: center;    /* Centra horizontalmente todas las cards */
+}
+
+/* Card individual */
+.card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #fff;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Imagen dentro de la card */
+.card-imagen {
+    width: 100%;            /* Ocupa todo el ancho disponible dentro de la card */
+    height: 180px;          /* Altura fija para todas las imágenes */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+/* Textos */
+.card-titulo {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 8px 0 4px;
+}
+
+.card-descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 3.5em;  /* Mantiene altura uniforme aunque cambie el texto */
+}
+
+.card-precio {
+    color: #b60000;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.card-boton {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #2C3E50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* display: inline-block:
+    Por defecto, los enlaces <a> son elementos en línea y no aceptan padding vertical real ni border radius bien definidos. 
+    Con inline-block permito que se comporte como un botón real con padding, bordes redondeados y ancho ajustado al texto. */
+
+
+/* ========================
+   PRACTICA GRID
+   ========================
+*/
+
+.contenedor-grid > :nth-child(1) { background-color: aquamarine;}
+.contenedor-grid > :nth-child(2) { background-color: #e74c3c;}
+.contenedor-grid > :nth-child(3) { background-color: greenyellow ;}
+.contenedor-grid > :nth-child(4) { background-color: purple;}
+.contenedor-grid > :nth-child(5) { background-color: goldenrod;}
+.contenedor-grid > :nth-child(6) { background-color: blue;}
+
+
+.contenedor-grid {
+    display: grid;      /* Activamos grid */
+    /* row-gap: 5px;
+    column-gap: 25px; */
+    /* gap: 5px 25px; */
+     /* espacio uniforme entre filas y columnas */
+    /* gap: 10px; */
+    /* 3 columnas exactas */
+    /* grid-template-columns: repeat(3,200px); */
+     /* 2 filas exactas */      
+    /* grid-template-rows: 100px 100px;                */
+    background-color: #eaeaea;
+    padding: 10px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: 75px 125px;
+    gap: 20px;
+    min-height: 300px; 
+
+    /* Alineación de los elementos dentro de cada celda */
+    justify-items: stretch;
+    align-items: stretch;
+    /* Atajo: place-items = align-items + justify-items */
+    /* place-items: start center; */
+
+    /* Alineación de la cuadrícula respecto del contenedor grid */
+    /* justify-content: center;
+    align-content: center; */
+    /* Atajo: place-content = align-content + justify-content */
+    place-content: center;
+}
+
+.item-1 {
+    /* Alineación del elemento dentro de su celda */
+    /* justify-self: center;
+    align-self: center; */
+    place-self: center;
+    order: 1;
+}
+
+.item-3 {
+    order: -4;
+}
+
+/* SECCION TIENDA GRID */
+.lista-cards--grid-fill {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /*
+    - minmax(280px, 1fr):
+        Cada card mide como mínimo 280px de ancho,
+        pero puede crecer hasta ocupar una fracción del espacio (1fr).
+    - auto-fill:
+        Intenta "rellenar" la fila con tantas columnas como quepan.
+        Si sobran huecos, los reserva (aunque queden vacíos).
+    - auto-fill vs auto-fit:
+        auto-fill: intenta llenar filas con columnas, incluso reservando huecos.
+        auto-fit: colapsa huecos y deja que las cards se ensanchen.
+  */
+    gap: 16px;
+}
+.lista-cards--grid-fit {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /*
+    - minmax(280px, 1fr):
+        Cada card mide como mínimo 280px de ancho,
+        pero puede crecer hasta ocupar una fracción del espacio (1fr).
+    - auto-fill:
+        Intenta "rellenar" la fila con tantas columnas como quepan.
+        Si sobran huecos, los reserva (aunque queden vacíos).
+    - auto-fill vs auto-fit:
+        auto-fill: intenta llenar filas con columnas, incluso reservando huecos.
+        auto-fit: colapsa huecos y deja que las cards se ensanchen.
+  */
+    gap: 16px;
+}
+
+/* GRID POR ÁREAS */
+.contenedor-areas {
+    display: grid;
+    min-height: 400px;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 16px;
+    grid-template-areas: 
+        "cabecera   cabecera    cabecera"
+        "menu       principal   ads"
+        "pie        pie         pie";
+}
+
+.area-header {
+    grid-area: cabecera; background-color: #e74c3c;
+}
+
+.area-menu {
+    grid-area: menu; background-color: greenyellow;
+}
+
+.area-main {
+    grid-area: principal;
+    background-color: aquamarine;
+}
+
+.area-aside {
+    grid-area: ads;
+    background-color: plum;
+}
+
+.area-footer {
+    grid-area: pie;
+    background-color: burlywood;
+}
+
+/* ========================
+   SECCION JUEGOS
+   ========================
+*/
+
+.tarjeta.juegos {
+    width: min(1700px, 95%);
+}
+
+/* Catálogo de juegos enfoque ESCRITORIO FIRST */
+.lista-cards--grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card-destacada {
+    /* grid-column: span 2; */
+    background-color: #82d2e5;
+    border: 2px solid red;
+}
+
+/* ================================================
+   SECCION GUIAS (diferente estructura al resto)
+   ================================================
+*/
+.guias h1 {
+    margin-top: 0;
+}
+
+.guias-videos {
+    margin-top: 2rem;
+}
+
+.guias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cada guía individual */
+.guia-video h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste de los iframes */
+.guia-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Mantiene el formato panorámico */
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Contenedor principal: menú lteral + contenido en fila */
+.layout-guias .layout-guias-contenido {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Menú lateral */
+.layout-guias .navega-lateral {
+    background-color: #2C3E50;
+    padding: 1rem 0.5rem;
+    min-width: 220px;
+}
+
+/* Menú en columna solo en la página de Guías */
+.layout-guias .navega-lateral .menu {
+    flex-direction: column;
+}
+
+/* Enlaces del menú lateral ocupan todo el ancho */
+.layout-guias .navega-lateral .menu a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+.layout-guias .navega-lateral .menu a:hover {
+    background: #0a1a2a;
+    color: #E74C3C;
+}
+
+/* El main se expande para ocupar el resto del espacio */
+.layout-guias #contenido-principal {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* =========================
+    SECCION NOTICIAS
+    TARJETAS DE VÍDEO Y AUDIO
+   ========================= */
+.video-card,
+.audio-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;   /* superior 10px */
+    margin-bottom: 0;   /* inferior 0 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-card h2,
+.audio-card h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Vídeos y audios */
+video,
+audio {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 10px auto; /* centrado, margen inferior 10px */
+    border-radius: 5px;
+}
+
+/* Iframe del vídeo de YouTube */
+.video-card iframe {
+    display: block;
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+}
+
+
+/* VERSION MOVILES */
+/* @media (width < 768px ) {}*/
+@media screen and (width < 768px){
+    .tienda.juegos {
+        width: 95%;
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: minmax(220px, 1fr);
+    }
+}
+
+/* VERSION TABLET */
+/* @media (768px <= width < 1024px) {}*/
+@media screen and (768px <= width < 1024px){
+    .tienda.juegos {
+        width: min(1000px, 95%);
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
