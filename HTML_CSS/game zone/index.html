@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">*
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,14 @@
     <!-- Preconexión a los servidores de Google Fonts (mejora rendimiento) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!-- Importar fuentes: Orbitron (títulos gamer) y Roboto (texto) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
     <title>GameZone - Tu portal de videojuegos</title>
 </head>
+
 <body>
     <header class="cabecera">
         <div class="brand">
@@ -25,7 +26,7 @@
         <nav class="navegacion">
             <ul class="menu">
                 <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="#">Noticias</a></li>
+                <li><a href="pages/noticias.html">Noticias</a></li>
                 <li><a href="pages/guias.html">Guías</a></li>
                 <li><a href="pages/contacto.html">Contacto</a></li>
                 <li><a href="pages/registro.html">Registro</a></li>
@@ -64,7 +65,7 @@
                 </div>
             </div>
 
-            
+
             <h3>Top Ventas</h3>
             <table class="tabla">
                 <thead>
@@ -98,15 +99,14 @@
             <!-- method=get envia la info en la URL -->
             <!-- name sirve para identificar simplemente al formulario -->
             <form name="buscar" action="buscar.php" method="get">
-                
+
                 <!-- label conecta visual y funcionalmente con el campo (a través de for <-> id) -->
                 <label for="search">Buscar juego:</label>
 
                 <!-- id identifica unívocamente al elemento y además se conecta con el label -->
                 <!-- placeholder ofrece una pista visual al usuario -->
                 <!-- name define el nombre de la variable que se enviará al servidor cuando se pulse el botón -->
-                <input type="search" name="busqueda" id="search"
-                placeholder="Escribe título...">
+                <input type="search" name="busqueda" id="search" placeholder="Escribe título...">
                 <button type="submit">Buscar</button>
             </form>
         </section>
@@ -150,4 +150,5 @@
         <p>&copy; 2025 GameZone. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>
