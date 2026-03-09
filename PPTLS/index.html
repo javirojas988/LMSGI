@@ -1,19 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Javier Rojas Aguilar" />
+    <link rel="icon" href="imagenes/spock-hand-gesture.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos.css">
+    
     <title>Piedra, papel, tijera, lagarto, spock</title>
 </head>
-<!--  -->
+
 <body>
     <header>
+        <h1 class="titulo-juego">Piedra, papel, tijera, lagarto, spock</h1>
+        <h2 class="subtitulo-juego">El juego definitivo</h2>
     </header>
     <main>
+        <div class="paneles-arriba">
+            <section class="panel-seleccion-jugada">
+                <h2>Elige tu jugada</h2>
+
+                <div class="contenedor-elecciones-juego">
+                    <button class="boton-eleccion-jugada" data-jugada="piedra">
+                        <p class="icono-jugada">🪨</p>
+                        <p>Piedra</p>
+                    </button>
+
+                    <button class="boton-eleccion-jugada" data-jugada="papel">
+                        <p class="icono-jugada">📄</p>
+                        <p>Papel</p>
+                    </button>
+
+                    <button class="boton-eleccion-jugada" data-jugada="tijera">
+                        <p class="icono-jugada">✂️</p>
+                        <p>Tijera</p>
+                    </button>
+
+                    <button class="boton-eleccion-jugada" data-jugada="lagarto">
+                        <p class="icono-jugada">🦎</p>
+                        <p>Lagarto</p>
+                    </button>
+
+                    <button class="boton-eleccion-jugada" data-jugada="spock"
+                        style="grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%;">
+                        <p class="icono-jugada">🖖</p>
+                        <p>Spock</p>
+                    </button>
+
+                </div>
+            </section>
+
+            <section class="panel-batalla">
+                <h2>Batalla</h2>
+
+                <div class="contenedor-jugadores">
+
+                    <div class="jugador">
+                        <p class="etiqueta-jugador">Tú</p>
+                        <div class="mostrar-jugada" id="jugada-jugador">
+                            <p class="placeholder">?</p>
+                        </div>
+                    </div>
+
+                    <div class="vs-circle">VS</div>
+
+                    <div class="jugador">
+                        <p class="etiqueta-jugador">CPU</p>
+                        <div class="mostrar-jugada" id="jugada-cpu">
+                            <p class="placeholder">?</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <div class="paneles-abajo">
+            <section class="contenedor-resultado">
+                <div class="resultados">
+                    <p class="mensaje-resultado" id="mensaje-resultado">
+                        ¡Elige una jugada para empezar!
+                    </p>
+                    <div class="estadisticas-juego">
+                        <div class="panel-estadistica">
+                            <p class="valor-estadistica" id="contador-victorias">0</p>
+                            <p class="etiqueta-estadistica">Victorias</p>
+                        </div>
+                        <div class="panel-estadistica">
+                            <p class="valor-estadistica" id="contador-derrotas">0</p>
+                            <p class="etiqueta-estadistica">Derrotas</p>
+                        </div>
+                        <div class="panel-estadistica">
+                            <p class="valor-estadistica" id="contador-empates">0</p>
+                            <p class="etiqueta-estadistica">Empates</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
+
     <footer>
+        <h3>Proyecto evaluación RA 03 - Lenguajes de marcas y sistemas de gestión de información</h3>
+        <h3>Proyecto realizado por: Javier Rojas Aguilar (Declaro que no he usado IA en el proyecto)</h3>
     </footer>
-<!--  -->
+
+    <script src="/js/javascript.js"> </script>
+
 </body>
 </html>
