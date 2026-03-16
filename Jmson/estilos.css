@@ -1,0 +1,50 @@
+ody{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+   sans-serif;
+    margin: 0;
+    padding: 24px;
+    background: #f6f7fb;
+    color: #1a1a1a;
+   }
+   .contenedor{
+    max-width: 520px;
+    margin: 0 auto;
+    background: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+   }
+   button:active{
+    transform: translateY(1px);
+   }
+   #resultado{
+    margin-top: 14px;
+    border: 2px dashed #d7d9e0;
+    border-radius: 12px;
+    padding: 12px;
+    height: 320px; /* ← altura estable para el contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafbff;
+    text-align: center;
+    overflow: hidden; /* ← recorta lo que sobresalga si hace
+   falta */
+   }
+   .imagenanimal{
+    width: 100%; /* ← ocupa el ancho disponible */
+    height: 100%; /* ← ocupa el alto disponible */
+    object-fit: contain; /* ← NO recorta, solo ajusta manteniendo
+   proporción */
+    /* object-fit: cover; ← Rellena todo pero puede recortar */
+    border-radius: 10px;
+    display: block;
+   }
+   .mensaje{
+    margin: 0;
+    padding: 0 8px;
+    color: #444;
+    line-height: 1.4;
+   }
+   
