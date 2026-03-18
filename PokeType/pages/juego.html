@@ -26,34 +26,41 @@
 
 
     <main class="main-juego">
-        <div class="pokemon-aleatorio">
-            <img id="pokemon-imagen" src="" alt="Imagen del pokémon rival">
-            <p id="pokemon-nombre"></p>
-            <p id="pokemon-tipo"></p>
-            <button id="btn-generar">Generar Pokémon</button>
+        <div class="div-boton-generar" >
+            <button id="boton-juego" class="boton-generar" >Generar Pokémon</button>
         </div>
+        
+        <div class="pokemon-aleatorio" id="pokemon-aleatorio">
+            <!-- aqui ira imagen , tipos y nombre del poke generado -->
+            
+        </div>
+
         <div class="botones-tipos">
-            <button>Normal</button>
-            <button>Fuego</button>
-            <button>Agua</button>
-            <button>Planta</button>
-            <button>Eléctrico</button>
-            <button>Hielo</button>
-            <button>Lucha</button>
-            <button>Veneno</button>
-            <button>Tierra</button>
-            <button>Volador</button>
-            <button>Psíquico</button>
-            <button>Bicho</button>
-            <button>Roca</button>
-            <button>Fantasma</button>
-            <button>Dragón</button>
-            <button>Siniestro</button>
-            <button>Acero</button>
-            <button>Hada</button>
+            <button class="tipo-normal" id="normal">Normal</button>
+            <button class="tipo-fire" id="fire">Fuego</button>
+            <button class="tipo-water" id="water">Agua</button>
+            <button class="tipo-grass" id="grass">Planta</button>
+            <button class="tipo-electric" id="electric">Eléctrico</button>
+            <button class="tipo-ice" id="ice">Hielo</button>
+            <button class="tipo-fighting" id="fighting">Lucha</button>
+            <button class="tipo-poison" id="poison">Veneno</button>
+            <button class="tipo-ground" id="ground">Tierra</button>
+            <button class="tipo-flying" id="flying">Volador</button>
+            <button class="tipo-psychic" id="psychic">Psíquico</button>
+            <button class="tipo-bug" id="bug">Bicho</button>
+            <button class="tipo-rock" id="rock">Roca</button>
+            <button class="tipo-ghost" id="ghost">Fantasma</button>
+            <button class="tipo-dragon" id="dragon">Dragón</button>
+            <button class="tipo-dark" id="dark">Siniestro</button>
+            <button class="tipo-steel" id="steel">Acero</button>
+            <button class="tipo-fairy" id="fairy">Hada</button>
         </div>
-        <div class="resultado">
-            <p id="resultado-texto"></p>
+        
+        <div class="resultado" >
+            <p><strong>RESULTADO</strong></p>
+            <div id="juego-resultado">
+            <!-- aqui ira el resultado Win or loose -->
+           </div> 
         </div>
     </main>
 
@@ -67,5 +74,4 @@
     </footer>
 </body>
 <script src="/js/script.js"></script>
-
 </html>

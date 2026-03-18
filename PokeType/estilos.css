@@ -36,6 +36,9 @@ header{
     width: auto;
     height: 150px;
 }
+.logo:hover {
+    height: 160px;
+}
 .navegacion{
     margin: 0;
     padding: 0.2rem 05rem;
@@ -99,15 +102,117 @@ footer a img{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: x-large;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 .inicio-texto{
+    width: 50%;
     display: flex;
     flex-direction: column;  
     padding: 1.5rem;
+    
 }
 .inicio-pokemon{
+    padding: 1rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
     padding: 1.5rem;
+}
+.inicio-tabla{
+    padding: 1rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inicio-tabla img {
+    height: 600px;
+}
+.inicio-imagen-shiny{
+    height: 400px;
 }
 
 /* juego */
+.main-juego{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+}
+.pokemon-aleatorio{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.juego-imagen{
+    height: 300px;
+}
+.div-boton-generar{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.boton-generar{
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.5rem;
+    background-color: aliceblue;
+    max-width: 10%;
+}
+.boton-generar:hover{
+    font-size: 1.4rem;
+    color: #000000;
+    background-color: #a7eca7b9;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.botones-tipos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;   
+    padding: 1rem;
+    
+}
+.botones-tipos button{
+    height: 60px;
+    margin: 0.2rem;
+    font-size: 1.5rem;
+    border: none;
+    width: 10%;
+    border-radius: 8px;
+}
+.botones-tipos button:hover{
+    font-size: 2rem;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/*los pongo en ingles para que pinte el <p> tipo del pokemon 
+ya que me devuelve el json el*/
+.tipo-normal    { background-color: #A8A878; }
+.tipo-fire      { background-color: #F08030; }
+.tipo-water     { background-color: #6890F0; }
+.tipo-grass     { background-color: #78C850; }
+.tipo-electric  { background-color: #F8D030; }
+.tipo-ice       { background-color: #98D8D8; }
+.tipo-fighting  { background-color: #C03028; }
+.tipo-poison    { background-color: #A040A0; }
+.tipo-ground    { background-color: #E0C068; }
+.tipo-flying    { background-color: #A890F0; }
+.tipo-psychic   { background-color: #F85888; }
+.tipo-bug       { background-color: #A8B820; }
+.tipo-rock      { background-color: #B8A038; }
+.tipo-ghost     { background-color: #705898; }
+.tipo-dragon    { background-color: #7038F8; }
+.tipo-dark      { background-color: #705848; }
+.tipo-steel     { background-color: #B8B8D0; }
+.tipo-fairy     { background-color: #EE99AC; }
