@@ -139,15 +139,29 @@ footer a img{
     font-size: x-large;
 }
 .pokemon-aleatorio{
+    width: fit-content;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #cce3f1;
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+.pokemon-aleatorio:hover{
+    width: 380px;
+    height: 415px;
+    
 }
 
 .juego-imagen{
     height: 300px;
 }
+.juego-imagen:hover{
+    height: 350px;
+}
+
 .div-boton-generar{
     display: flex;
     justify-content: center;
