@@ -89,14 +89,22 @@ function juegoPoke() {
                         throw new Error("No se ha generado correctamente, intentelo de nuevo.");
                     }
 
+                    //traducimo pa despues mostrarlo en español
+                    let tipoMostrar = data.types[0].type.name;
+                    tipoMostrar = traducirTipo(tipoMostrar);
+
+                    //modifico el div para que tenga clase al mostrar pokemon solo 
+                    document.getElementById("pokemon-aleatorio").className = ("pokemon-aleatorio");
                     //cojo el div con getelement, y le inserto la imagen, tipo, nombre
                     //le dois clases tambien para que tengan color de fondo, tamaño etc. 
                     document.getElementById("pokemon-aleatorio").innerHTML =
                         `<img src="${data.sprites.front_default}" alt="Imagen pokemon juego" class="juego-imagen">
                         <p>${data.name}</p>
-                        <p class="tipo-${data.types[0].type.name}">${data.types[0].type.name}</p>`;
+                        <p class="tipo-${data.types[0].type.name}">${tipoMostrar}</p>`;
 
+                    //le da valor para usarlo en la batalla 
                     tipoPoke = data.types[0].type.name;
+                    
 
                     //reseteo para que no salga nada cuando le doi otra vez al boton
                     document.getElementById("juego-resultado").textContent = "";
@@ -149,8 +157,8 @@ function batallaJuego() {
     botonesTipos.forEach(boton => {
         boton.addEventListener("click", () => {
             try {
-                //el tipo lo tengo en el id porque lo he puesto en ingles
-                //lo necesitaba asi porque el json me da el tipo en ingles
+                //el tipo del boton elegido lo tengo en el id porque lo he puesto en ingles
+                //lo necesitaba asi para que funcione el tablaVentajas
                 tipoElegido = boton.id;
                 if (!tipoElegido) {
                     throw new Error("Hubo un error a la hora de seleccionar el tipo del pokemon");
@@ -172,4 +180,65 @@ function batallaJuego() {
         })
     })
 
+}
+/**
+ * @brief Esta función traducidará la variable tipo tipoPoke para enseñarla enseñarla en español en vez de ingles
+ */
+function traducirTipo(tipoMostrar){
+    switch (tipoMostrar) {
+        case "fire":      
+            tipoMostrar = "Fuego";
+            break;
+        case "water":     
+            tipoMostrar = "Agua";      
+            break;
+        case "grass":     
+            tipoMostrar = "Planta";    
+            break;
+        case "electric":  
+            tipoMostrar = "Eléctrico"; 
+            break;
+        case "ice":       
+            tipoMostrar = "Hielo";     
+            break;
+        case "fighting":  
+            tipoMostrar = "Lucha";     
+            break;
+        case "poison":    
+            tipoMostrar = "Veneno";    
+            break;
+        case "ground":    
+            tipoMostrar = "Tierra";    
+            break;
+        case "flying":    
+            tipoMostrar = "Volador";   
+            break;
+        case "psychic":   
+            tipoMostrar = "Psiquico";  
+            break;
+        case "bug":       
+            tipoMostrar = "Bicho";     
+            break;
+        case "rock":      
+            tipoMostrar = "Roca";      
+            break;
+        case "ghost":     
+            tipoMostrar = "Fantasma";  
+            break;
+        case "dragon":    
+            tipoMostrar = "Dragón";    
+            break;
+        case "dark":      
+            tipoMostrar = "Siniestro"; 
+            break;
+        case "steel":     
+            tipoMostrar = "Acero";     
+            break;
+        case "fairy":     
+            tipoMostrar = "Hada";      
+            break;
+        default:          
+            break;
+    }   
+    return tipoMostrar;
 }
