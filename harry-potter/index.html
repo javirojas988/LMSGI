@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Página básica con HTML5 y CSS3">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="xxxxn">
+        <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="estilos.css">
+        <title>Harry Potter API</title>
+        <meta name="keywords" content="HTML5, CSS3, Harry Potter, API">
+        <meta name="robots" content="index, follow">
+    </head>
+    <body>
+
+        <!-- Cabecera -->
+        <header>
+            <h1>Harry Potter y la recuperación de los RA 03, 04 y 05</h1>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main>
+
+            <!-- Controles -->
+            <section class="contenedor-controles">
+                <label for="selector-casa">Selecciona una casa:</label>
+                <select id="selector-casa" class="selector-casa">
+                    <option value="Gryffindor">Gryffindor</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                    <option value="Slytherin">Slytherin</option>
+                </select>
+                
+                
+                <div class="contenedor-botones">
+                    <button id="boton-aleatorio">Personaje aleatorio</button>
+                    <button id="boton-casa" class="boton-casa-gryffindor">Todos los personajes de Gryffindor</button>
+                </div>
+            </section>
+
+            <!-- Tarjeta del personaje -->
+            <section class="contenedor-tarjeta">
+                <div id="tarjeta-personaje" class="tarjeta oculto">
+
+                    <div class="contenedor-imagen" id="contenedor-imagen">
+                        <img id="imagen-personaje" src="" alt="Imagen del personaje">
+                    </div>
+                    
+                    <!-- Papu esto -->
+                    <div class="datos-personaje" id = "datos-personaje">
+                        <h2 id="nombre-personaje">Nombre</h2>
+                        <p><strong>Especie:</strong> <span id="especie-personaje"></span></p>
+                        <p><strong>Casa:</strong> <span id="casa-personaje"></span></p>
+                        <p><strong>Patronus:</strong> <span id="patronus-personaje"></span></p>
+                    </div>
+
+                </div>
+
+                <!-- CONTROLES PARA LA CASA -->
+                <div id="botones-avanzar" class="botones-avanzar oculto">
+                    <button id="primero">Primero</button>
+                    <button id="anterior">Anterior</button>
+                    <button id="siguiente">Siguiente</button>
+                    <button id="ultimo">Último</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>Recuperación realizada por: Javier Rojas</p>
+        </footer>
+
+        <script src="js/javascript.js"></script>
+    </body>
+</html>
